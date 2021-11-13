@@ -1,0 +1,33 @@
+@import "../../styles/global";
+
+.checkbox {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: solid 2px $checkbox;
+    border-radius: 3px;
+    background-color: transparent;
+    margin-bottom: 0;
+    cursor: pointer;
+
+    input {
+        cursor: pointer;
+        opacity: 0;
+    }
+}
+
+.checkbox.checked {
+    &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        background: $checkbox;
+    }
+}
+ 

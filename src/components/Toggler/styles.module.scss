@@ -1,0 +1,49 @@
+@import "../../styles/global";
+
+.tcontainer {
+    width: 40px;
+    height: 18px;
+    border-radius: 16px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 0;
+
+    input {
+        visibility: hidden;
+
+        &:checked + .toggler {
+            background: black;
+        }
+
+        &:checked + .toggler::before {
+            background: #bebe;
+            transform: translateX(22px);
+        }
+    }
+
+    .toggler {
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border: 1px solid #bebe;
+        background: #bebe;
+        border-radius: 16px;
+        transition: all .3s;
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 2px;
+            bottom: 2px;
+            background: black;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+    }
+}
